@@ -35,6 +35,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="me.involve.involveme.SplashScreenActivity" />
+            <intent-filter><action android:name="android.intent.action.VIEW"></action></intent-filter>
         </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -48,13 +49,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="me.involve.involveme.SplashScreenActivity" />
-        </activity>
     </application>
 
 </manifest>
