@@ -4,9 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <ListView
+        android:id="@+id/list_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="List fragment"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorAccent" />
+
+    <ImageView
+        android:id="@+id/logo_idea"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/desc_idea"
+        android:layout_width="276dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/logo_idea"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_toEndOf="@id/logo_idea"
+        android:layout_toRightOf="@id/logo_idea"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp" />
+
 
 </RelativeLayout>

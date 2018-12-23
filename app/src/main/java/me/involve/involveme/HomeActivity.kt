@@ -19,7 +19,6 @@ import com.google.android.gms.maps.model.MarkerOptions
 class HomeActivity : Fragment(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
 
-
     override fun onMapReady(p0: GoogleMap) {
         mMap = p0
 
@@ -29,15 +28,16 @@ class HomeActivity : Fragment(), OnMapReadyCallback {
 
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         var mapFragment: SupportMapFragment?=null
         mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
     }
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        var view: View = inflater?.inflate(R.layout.fragment_home, container, false)!!
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        var view: View = inflater.inflate(R.layout.fragment_home, container, false)
 
         return view
     }

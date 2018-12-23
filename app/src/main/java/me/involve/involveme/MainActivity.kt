@@ -1,5 +1,6 @@
 package me.involve.involveme
 
+import android.content.Context
 import android.support.design.widget.TabLayout
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -29,6 +30,18 @@ class MainActivity : AppCompatActivity() {
      */
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
 
+    init {
+        instance = this
+    }
+
+    companion object {
+        private var instance: MainActivity? = null
+
+        fun applicationContext() : Context {
+            return instance!!.applicationContext
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -49,6 +62,8 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+
+        val context: Context = MainActivity.applicationContext()
 
     }
 
