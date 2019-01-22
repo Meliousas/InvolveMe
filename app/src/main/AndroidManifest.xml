@@ -37,16 +37,16 @@
                 android:value="me.involve.involveme.SplashScreenActivity" />
             <intent-filter><action android:name="android.intent.action.VIEW"></action></intent-filter>
         </activity>
-        <activity
-            android:name=".DetailsActivity"
-            android:label="@string/title_details_activity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="me.involve.involveme.MainActivity" />
-            <intent-filter><action android:name="android.intent.action.VIEW"></action></intent-filter>
-        </activity>
+        <!--<activity-->
+            <!--android:name=".DetailsActivity"-->
+            <!--android:label="@string/title_details_activity"-->
+            <!--android:parentActivityName=".MainActivity"-->
+            <!--android:theme="@style/AppTheme.NoActionBar">-->
+            <!--<meta-data-->
+                <!--android:name="android.support.PARENT_ACTIVITY"-->
+                <!--android:value="me.involve.involveme.MainActivity" />-->
+            <!--<intent-filter><action android:name="android.intent.action.VIEW"></action></intent-filter>-->
+        <!--</activity>-->
         <activity android:name=".DetailsActivityNew" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

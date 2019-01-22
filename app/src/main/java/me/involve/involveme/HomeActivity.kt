@@ -11,6 +11,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import java.util.stream.Collector
 
 /**
  * Created by Mela on 2018-12-21.
@@ -18,14 +19,17 @@ import com.google.android.gms.maps.model.MarkerOptions
 
 class HomeActivity : Fragment(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
+    val d: DataHolder = DataHolder()
+    var arrInitiative: ArrayList<Initiative> =  d.getArrInitiatives()
 
     override fun onMapReady(p0: GoogleMap) {
         mMap = p0
 
-        val sampleMarker = LatLng(-10.0, 100.0)
-        mMap.addMarker(MarkerOptions().position(sampleMarker).title("Sample marker"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sampleMarker))
-
+       for (i in arrInitiative) {
+           val latlong = i.location!!
+           mMap.addMarker(MarkerOptions().position(latlong).title(i.name))
+           mMap.moveCamera(CameraUpdateFactory.newLatLng(latlong))
+       }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -15,6 +15,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import com.google.firebase.FirebaseApp
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -39,11 +40,14 @@ class MainActivity : AppCompatActivity() {
 
         fun applicationContext() : Context {
             return instance!!.applicationContext
+
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FirebaseApp.initializeApp(this);
+
         setContentView(R.layout.activity_main)
 
         setSupportActionBar(toolbar)
