@@ -11,7 +11,7 @@ public final class DataHolder {
             arrInitiative.add(Initiative("55","Renovate schoolyard",
                     Tag.architecture,
                     "It is crucial for success of our education - to have proper place to learn. I present to you...",
-                    LatLng(20.0,40.0),
+                    LatLng(18.0,42.0),
                     R.drawable.measuring , 0.3))
 
             arrInitiative.add(Initiative("56","We need plants!",
@@ -26,7 +26,7 @@ public final class DataHolder {
                             "There is too much garbage in our neighbourhood." +
                             "There is too much garbage in our neighbourhood." +
                             "There is too much garbage in our neighbourhood.",
-                    LatLng(25.0,40.0),
+                    LatLng(25.0,43.0),
                     R.drawable.garbage, 5.0))
 
             arrInitiative.add(Initiative("59","New party event",

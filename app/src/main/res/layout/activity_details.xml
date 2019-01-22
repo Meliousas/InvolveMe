@@ -82,18 +82,30 @@
 
             <RatingBar
                 android:id="@+id/rating_field"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
-                android:progressTint="@color/colorPrimaryDark"
                 android:clickable="true"
                 android:elevation="0dp"
-                android:padding="0dp" />
+                android:numStars="5"
+                android:padding="0dp"
+                android:progressTint="@color/colorPrimaryDark" />
             <Button
                 android:id="@+id/save_button"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Save rating"/>
+            <TextView
+                android:id="@+id/vote"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#fff"
+                android:clickable="true"
+                android:elevation="0dp"
+                android:padding="5dp"
+                android:text=""/>
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>
