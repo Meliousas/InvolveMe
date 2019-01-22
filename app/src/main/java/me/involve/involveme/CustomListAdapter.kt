@@ -1,6 +1,7 @@
 package me.involve.involveme
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 
 
-class CustomAdapter(var context: Context, var initiative: ArrayList<Initiative>): BaseAdapter() {
+class CustomListAdapter(var context: Context, var initiative: ArrayList<Initiative>): BaseAdapter() {
 
     private class ViewHolder(row: View?){
         var txtName : TextView
@@ -18,6 +19,12 @@ class CustomAdapter(var context: Context, var initiative: ArrayList<Initiative>)
         init {
             this.txtName = row?.findViewById(R.id.desc_idea) as TextView
             this.image = row?.findViewById(R.id.logo_idea) as ImageView
+
+            row.setOnClickListener{
+                val intent = Intent(row.context, DetailsActivityNew::class.java)
+
+                row.context.startActivity(intent)
+            }
         }
     }
 
@@ -36,8 +43,27 @@ class CustomAdapter(var context: Context, var initiative: ArrayList<Initiative>)
             viewHolder = view.tag as ViewHolder
         }
         var initiative: Initiative = getItem(p0) as Initiative
-        viewHolder.txtName.text = initiative.name
-        viewHolder.image.setImageResource(initiative.logo)
+
+        viewHolder.image.setOnClickListener {
+
+            val intent = Intent(context, DetailsActivityNew::class.java)
+            intent.putExtra("name", initiative.name!!)
+            intent.putExtra("description", initiative.description!!)
+            intent.putExtra("image", initiative.logo!!)
+            context!!.startActivity(intent)
+        }
+
+        viewHolder.txtName.setOnClickListener {
+
+            val intent = Intent(context, DetailsActivityNew::class.java)
+            intent.putExtra("name", initiative.name!!)
+            intent.putExtra("description", initiative.description!!)
+            intent.putExtra("image", initiative.logo!!)
+            context!!.startActivity(intent)
+        }
+        viewHolder.image.setImageResource(initiative.logo!!)
+        viewHolder.txtName.text = initiative.name!!
+
 
         return view as View
     }

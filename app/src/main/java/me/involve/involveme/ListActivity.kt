@@ -14,6 +14,7 @@ import me.involve.involveme.MainActivity.Companion.applicationContext
  * Created by Mela on 2018-12-21.
  */
 
+
 class ListActivity : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
        super.onCreateView(inflater, container, savedInstanceState)
@@ -25,17 +26,19 @@ class ListActivity : Fragment() {
                 Tag.architecture,
                 "It is crucial for success of our education - to have proper place to learn. I present to you...",
                 LatLng(20.0,40.0),
-                R.drawable.measuring))
+                R.drawable.measuring , 0.3))
 
         arrInitiative.add(Initiative("We need plants!",
                 Tag.nature,
                 "There is no color in our neighbourhood, we should buy some plants!",
                 LatLng(21.0,40.0),
-                R.drawable.flowers))
+                R.drawable.flowers, 3.4))
 
-        listView.adapter = CustomAdapter(applicationContext(), arrInitiative)
+        listView.adapter = CustomListAdapter(applicationContext(), arrInitiative)
         return view
     }
+
+
 
 
 }
